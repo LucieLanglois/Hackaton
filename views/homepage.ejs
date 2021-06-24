@@ -1,13 +1,56 @@
 <!DOCTYPE html>
-<html>
+<html lang="en" dir="ltr">
   <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <meta charset="utf-8">
+    <title>Ticetac</title>
+    <!-- To add in order to scale the view for mobiles -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="/stylesheets/style.css">
   </head>
   <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
+
+    <nav class="navbar navbar-light bg-light">
+        <div class="container">
+          <a class="navbar-brand" href="#">
+            <img src="/docs/5.0/assets/brand/bootstrap-logo.svg" alt="" width="30" height="24">
+          </a>
+        </div>
+      </nav>
+
+      <div class="home">
+        <div class="col- text-center get_started">
+          <div class=" col-9 text-center one-way">One-way ticket : </div>
+      </div>
+         <div class="row">
+          <form action="/booking" mathod="POST">
+            <div>
+            <input name="from" type="text"  class="form-control" placeholder="From: Paris, Marseille..">
+          </div>
+           <div>
+            <input name="to" type="text" class="form-control" placeholder="To: Lille, Nantes..">
+          </div>
+          <div>
+            <input name="date" id="date" type="date" value="22-11-2019">
+          </div>
+          <div>
+            <button name="go" type="button" class="btn btn-danger">GO</button>
+          </div>
+          </form>
+        </div>
+          
+    
+          
+
+      
+
+
+        </div>
+      </div>
+
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
   </body>
 </html>
