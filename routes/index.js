@@ -3,6 +3,7 @@ var router = express.Router();
 var mongoose = require('mongoose');
 
 
+
 /* GET home page. */
 router.get('/', function(req, res, next) {
   res.render('login');
@@ -24,7 +25,7 @@ res.redirect('/result');
 router.get('/result', function (req,res,next){
   res.render('result');
   })
-  
+
 /*adressage des pages d'erreursg*/
 router.get('/error', function(res,req,next) {
 res.render('error');
