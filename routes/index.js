@@ -17,7 +17,6 @@ res.render('homepage');
 /*formulaire de recherche qui va chercher dans la BDD  */
 router.post('/booking', function (req,res,next){
 
-
 res.redirect('/result');
 } )
 
@@ -25,6 +24,7 @@ res.redirect('/result');
 router.get('/result', function (req,res,next){
   res.render('result');
   })
+  
 /*adressage des pages d'erreursg*/
 router.get('/error', function(res,req,next) {
 res.render('error');
