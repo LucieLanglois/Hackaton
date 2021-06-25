@@ -19,20 +19,20 @@
   <body>
     <%-include('navbar');%>
     <div class="home-result">
+      <p>Tickets available on <%=resultat[0].date.getDate()%>/ <%=resultat[0].date.getMonth()+1%></p>
       <% for(let i=0; i<resultat.length;i++){%>
       <div class="row col-8">
         <div><%=resultat[i].departure%> / <%=resultat[i].arrival%></div>
         <div>train departure at <%=resultat[i].departureTime%></div>
         <div><%=resultat[i].price%>€</div>
-        <div><a type="button" class="btn btn-danger">OK</a></div>
+        <div><a href="/myTickets?departureFromFront=<%= resultat[i].departure%>&arrivalFromFront=<%= resultat[i].arrival%>&departureTimeFromFront=<%= resultat[i].departureTime%>&priceFromFront=<%= resultat[i].price%>" class="btn btn-danger">Confirm</a></div>
       </div>
         <!-- <div><a type="button" class="btn btn-danger">Confirm</a></div> -->
-        <div><a href="/myTickets?departureFromFront=<%= resultat[i].departure%>&arrivalFromFront=<%= resultat[i].arrival%>&departureTimeFromFront=<%= resultat[i].departureTime%>&priceFromFront=<%= resultat[i].price%>" class="btn btn-outline-info btn-sm">Confirm</a></div>
-      </div>
-      <%-include('footer');%>
-    </div>
+    
     <%}%>
-
+  </div>
+  <%-include('footer');%>
+</div>
     <script
       src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
       integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
