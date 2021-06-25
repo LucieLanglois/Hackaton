@@ -26,7 +26,8 @@
         <div><%=resultat[i].price%>€</div>
         <div><a type="button" class="btn btn-danger">OK</a></div>
       </div>
-        <div><a type="button" class="btn btn-danger">Confirm</a></div>
+        <!-- <div><a type="button" class="btn btn-danger">Confirm</a></div> -->
+        <div><a href="/myTickets?departureFromFront=<%= resultat[i].departure%>&arrivalFromFront=<%= resultat[i].arrival%>&departureTimeFromFront=<%= resultat[i].departureTime%>&priceFromFront=<%= resultat[i].price%>" class="btn btn-outline-info btn-sm">Confirm</a></div>
       </div>
       <%-include('footer');%>
     </div>
