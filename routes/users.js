@@ -33,7 +33,7 @@ if(!searchUser){
     id: newUserSave._id,
   }
 
-  console.log(req.session.user)
+  // console.log(req.session.user)
 
   res.redirect('/login')
 } else {
@@ -49,7 +49,7 @@ router.post('/sign-in', async function(req,res,next){
   })
 console.log(searchUser);
   if(searchUser!= null){
-    console.log("hello");
+    // console.log("hello");
     req.session.user = {
       name: searchUser.username,
       id: searchUser._id
@@ -76,5 +76,13 @@ router.get('/myLastTrips', function(req, res, next) {
 router.get('/', function(req, res, next) {
   res.send('respond with a resource');
 });
+
+router.get('/logout', function(req,res,next){
+
+  req.session.user = null;
+
+  res.redirect('/')
+});
+
 
 module.exports = router;
