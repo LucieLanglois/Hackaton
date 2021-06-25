@@ -4,7 +4,7 @@ var journeySchema = mongoose.Schema({
     departure: String,
     arrival: String,
     date: Date,
-    departure: String,
+    departureTime: String,
     price: Number,
 })
 console.log(journeySchema);

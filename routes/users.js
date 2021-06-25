@@ -47,7 +47,7 @@ router.post('/sign-in', async function(req,res,next){
     email: req.body.emailFromFront,
     password: req.body.passwordFromFront
   })
-console.log(searchUser);
+// console.log(searchUser);
   if(searchUser!= null){
     // console.log("hello");
     req.session.user = {
@@ -64,6 +64,7 @@ console.log(searchUser);
 
 
 router.get('/myTickets', function(req, res, next) {
+
   res.render('myTickets');
 });
 

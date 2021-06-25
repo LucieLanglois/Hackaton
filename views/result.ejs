@@ -43,16 +43,17 @@
         </div>
       </nav>
     <div class="home-result">
-      <% for(let i=0; i<cityList.length;i++){%>
+      <% for(let i=0; i<resultat.length;i++){%>
       <div class="row col-8">
-        <div>Paris/Lille</div>
-        <div>train departure at 15;;</div>
-        <div>99€</div>
+        <div><%=resultat[i].departure%> / <%=resultat[i].arrival%></div>
+        <div>train departure at <%=resultat[i].departureTime%></div>
+        <div><%=resultat[i].price%>€</div>
         <div><a type="button" class="btn btn-danger">OK</a></div>
       </div>
-        <div><a type="button" class="btn btn-danger">OK</a></div>
+        <div><a type="button" class="btn btn-danger">Confirm</a></div>
       </div>
     </div>
+    <%}%>
 
     <script
       src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
