@@ -33,17 +33,18 @@ if (resultat.length == 0 ) {
 /*adressage des pages de résultats*/
 router.get('/result', async function (req,res,next){
   var resultat = await journeyModel.find({ departure: req.body.from, arrival:req.body.to, date:req.body.date});
-  var newDate = resultat[i].date.getDay();
-  console.log("HELLO", newDate);
+  // var newDate = resultat[i].date.getDay();
+  // console.log("HELLO", newDate);
 
 
   res.render('result', {resultat});
-  })
+  });
 
 /*adressage des pages d'erreursg*/
-router.get('/noticket', function(res,req,next) {
+router.get('/noticket', function(req,res,next) {
+  // console.log("coucou");
 res.render('noticket');
-})
+});
 
 
 module.exports = router;

@@ -35,9 +35,9 @@ if(!searchUser){
 
   // console.log(req.session.user)
 
-  res.redirect('/login')
-} else {
   res.redirect('/homepage')
+} else {
+  res.render('login')
 }});
 
 
@@ -54,7 +54,7 @@ router.post('/sign-in', async function(req,res,next){
       name: searchUser.username,
       id: searchUser._id
     }
-    res.redirect('/homepage')
+    res.redirect('/')
   } else {
     res.render('login')
   }
