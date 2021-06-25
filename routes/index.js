@@ -40,6 +40,41 @@ router.get('/result', async function (req,res,next){
   res.render('result', {resultat});
   });
 
+
+  router.get('/mytickets', function(req, res, next) {
+    var alreadyExist = false;
+    req.session.resultat = [];
+  
+    // for(var i = 0; i< req.session.resultat.length; i++){
+    //   if(req.session.resultat[i].departure == req.query.departureFromFront){
+    //     req.session.resultat[i].quantity = Number(req.session.resultat[i].quantity) + 1;
+    //     alreadyExist = true;
+    //   }
+  //   // }
+  // console.log("coucou", req.query);
+    if(alreadyExist == false){
+      req.session.resultat.push({
+        departure: req.query.departureFromFront,
+        arrival: req.query.arrivalFromFront,
+        departureTime: req.query.departureTimeFromFront,
+        price: req.query.priceFromFront,
+        quantity: 1
+      })
+    }
+  // console.log("hello", req.session.resultat);
+  
+    res.render('mytickets', {resultat:req.session.resultat});
+  });
+  
+  router.get('/myLastTrips', function(req, res, next) {
+   var data = JSON.parse(req.query.tickets);
+   var resulat = [];
+   console.log("DATA",data);
+
+   //console.log("DATA",data);
+
+    res.render('myLastTrips',{data:data});
+  });
 /*adressage des pages d'erreursg*/
 router.get('/noticket', function(req,res,next) {
   // console.log("coucou");

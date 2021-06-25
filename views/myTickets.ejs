@@ -30,24 +30,24 @@
                 <tbody>
                 <% 
                 var totalCard = 0;
-                for(var i=0;i<xxx.length;i++){
+                for(var i=0;i<resultat.length;i++){
                 %>
                   <tr>
                     <th scope="row"><%=[i]%></th>
-                    <td><%=xxx[i].departure%>/<%=xxx[i].arrival%></td>
-                    <td><%=xxx[i].date%></td>
-                    <td><%=xxx[i].departureTime%></td>
-                    <td><%=xxx[i].price%>€</td>
+                    <td><%=resultat[i].departure%>/<%=resultat[i].arrival%></td>
+                    <td><%=resultat[i].date%></td>
+                    <td><%=resultat[i].departureTime%></td>
+                    <td><%=resultat[i].price%>€</td>
                   </tr>
-                  <% totalCard = totalCard + xxx[i].price%>
-                <%}%>
+                  <% totalCard = totalCard + resultat[i].price
+                }%>
                   <tfoot>
                     <tr>
                     <th>Total</th>
                     <th></th>
                     <th></th>
                     <th></th>
-                    <th><%= TotalCard %>€</th>
+                    <th><%=totalCard %>€</th>
                   </tr>
                   </tfoot>
               
@@ -55,7 +55,7 @@
               </table>
 
               <div>
-               <a href="/myLastTrips?tickets=<%=JSON.stringtify(xxx)%>"><button type="submit" class="btn btn-danger">Confirm</button></a>
+               <a href="/myLastTrips?tickets=<%=JSON.stringify(resultat)%>"><button type="submit" class="btn btn-danger">Confirm</button></a>
               </div>
 
             </div>

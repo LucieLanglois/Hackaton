@@ -54,7 +54,7 @@ router.post('/sign-in', async function(req,res,next){
       name: searchUser.username,
       id: searchUser._id
     }
-    res.redirect('/')
+    res.redirect('/homepage')
   } else {
     res.render('login')
   }
@@ -63,14 +63,8 @@ router.post('/sign-in', async function(req,res,next){
 });
 
 
-router.get('/myTickets', async function(req, res, next) {
-  
-  res.render('myTickets',{});
-});
 
-router.get('/myLastTrips', function(req, res, next) {
-  res.render('myLastTrips');
-});
+
 
 
 /* GET users listing. */
