@@ -9,37 +9,10 @@
     <link rel="stylesheet" href="/stylesheets/style.css">
   </head>
   <body>
-
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">
-                <img src="/images/train.png" width="30" height="24">
-              </a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0 offset-md-4"></ul>
-               <!-- <ul class="col-12 text-center get_started"></ul> -->
-                <li class="nav-item">
-            <a class="nav-link" href="#">Ticetac</a>
-        </li>
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0 offset-md-4"></ul>
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Connection</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">My last trips</a>
-              </li>
-          </div>
-        </div>
-      </nav>
-
+    <%-include('navbar');%>
 
       <div class="home-result">
-        <div class="row col-8">
-
+      
           <form action="/booking" method="POST" class="form-inline">
           <input name="from" type="text"  class="form-control mr-4" placeholder="From: Paris, Marseille..">
           <input name="to" type="text" class="form-control mr-4" placeholder="To: Lille, Nantes..">
@@ -47,8 +20,7 @@
           <button name="go" type="submit" class="btn btn-danger">GO</button>
           </form>
          
-        </div>
-        <div><img src="/images/landmark.png" ></div>
+              <div><img src="/images/landmark.png" ></div>
           
     
           
@@ -57,6 +29,8 @@
 
 
         </div>
+       <%-include('footer');%>
+
       </div>
 
 
