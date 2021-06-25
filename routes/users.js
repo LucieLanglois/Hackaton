@@ -63,9 +63,9 @@ router.post('/sign-in', async function(req,res,next){
 });
 
 
-router.get('/myTickets', function(req, res, next) {
-
-  res.render('myTickets');
+router.get('/myTickets', async function(req, res, next) {
+  
+  res.render('myTickets',{});
 });
 
 router.get('/myLastTrips', function(req, res, next) {
