@@ -59,3 +59,12 @@ font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
   align-items: center;
   justify-content: center;
   }
+
+  footer {
+  display: flex;
+  justify-content: center ;
+  align-items: center;
+  background-color:  #7abcff;
+  }
+    
+     
