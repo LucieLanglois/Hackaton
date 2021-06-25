@@ -19,12 +19,16 @@ res.render('homepage');
 
 /*formulaire de recherche qui va chercher dans la BDD  */
 router.post('/booking', async function (req,res,next){
-  console.log("coucou");
-console.log(req.body);
-var from = await journeyModel.findOne({departure: req.body.from})
-
-res.redirect('/result');
-} )
+ console.log(req.body);
+var resultat = await journeyModel.find({ departure: req.body.from, arrival:req.body.to, date:req.body.date});
+console.log("RESULTAT",resultat)  
+if (resultat.length == 0 ) { 
+  res.redirect('/noticket')
+} else { 
+  res.render('result',{resultat:resultat})
+}
+  
+});
 
 /*adressage des pages de résultats*/
 router.get('/result', function (req,res,next){
@@ -32,8 +36,8 @@ router.get('/result', function (req,res,next){
   })
 
 /*adressage des pages d'erreursg*/
-router.get('/error', function(res,req,next) {
-res.render('error');
+router.get('/noticket', function(res,req,next) {
+res.render('noticket');
 })
 
 
